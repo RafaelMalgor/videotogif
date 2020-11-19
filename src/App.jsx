@@ -22,7 +22,7 @@ function App() {
     ffmpeg.FS('writeFile', 'video.mp4', await fetchFile(video));
 
     // Run the command
-    await ffmpeg.run('-i', 'video.mp4', '-t', '2.5', '-ss', '2.0', '-f', 'gif', 'output.gif');
+    await ffmpeg.run('-i', 'video.mp4', '-ss', '2.0', '-f', 'gif', 'output.gif');
 
     const data = ffmpeg.FS('readFile', 'output.gif');
 
